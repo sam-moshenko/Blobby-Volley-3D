@@ -9,7 +9,11 @@ public class BallController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody> ();
-		Vector3 force = new Vector3 (1, 0, 1) * initialForceMultiplier;
-		rigidbody.AddForce (force);
+		rigidbody.isKinematic = true;
+		rigidbody.detectCollisions = true;
+	}
+
+	void OnCollisionEnter() {
+		rigidbody.isKinematic = false;
 	}
 }
