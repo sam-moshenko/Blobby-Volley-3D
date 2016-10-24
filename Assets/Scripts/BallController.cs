@@ -9,11 +9,10 @@ public class BallController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		rigidbody = GetComponent<Rigidbody> ();
-		rigidbody.isKinematic = true;
-		rigidbody.detectCollisions = true;
+		rigidbody.useGravity = false;
 	}
 
 	void OnCollisionEnter() {
-		rigidbody.isKinematic = false;
+		rigidbody.useGravity = true;
 	}
 }
