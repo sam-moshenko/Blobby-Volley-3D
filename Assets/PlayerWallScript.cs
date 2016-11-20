@@ -31,8 +31,10 @@ public class PlayerWallScript : MonoBehaviour {
 				secondPlayerScoreText.text = secondPlayerScoreCount.ToString ();
 			}
 
-			Destroy (ball);
-			Instantiate (ballTemplate);
+			if (ball) {
+				Destroy (ball);
+				Instantiate (ballTemplate);
+			}
 		}
 	}
 }
