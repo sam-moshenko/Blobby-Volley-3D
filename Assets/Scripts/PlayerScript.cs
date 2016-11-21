@@ -5,6 +5,7 @@ public class PlayerScript : MonoBehaviour {
 	Rigidbody rigidbody;
 	public float multiplier = 100;
 	public float jumpForce = 30;
+	public float distanceToGroundToJump = 2;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +22,7 @@ public class PlayerScript : MonoBehaviour {
 		force += GetMouseVector ();
 
 		rigidbody.AddForce (force);
-		if (transform.position.y < 5) {
+		if (transform.position.y < distanceToGroundToJump) {
 			rigidbody.AddForce (0, (jump == true ? jumpForce : 0.0f), 0);
 		}
 	}
